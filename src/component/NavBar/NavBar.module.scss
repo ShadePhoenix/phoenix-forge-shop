@@ -1,0 +1,16 @@
+//TODO:  Add media tags for responsive resizing and layout.
+
+.NavBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__links {
+        margin: 20px;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__link {
+        border: 2px solid black;
+    }
+}

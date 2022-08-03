@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Phoenix Forge e-Shop Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## MVP
 
-## Available Scripts
+At a minimum your e-shop website should have two pages:
 
-In the project directory, you can run:
+-   Home Page
+    -   This will contain:
+        -   A Grid of products
+        -   Carousel of featured products
+        -   Product Page (with id parameter) Similar to a product page on another site, allows you to add to cart and select product variants
+-   All products should be stored in Firestore:
+    -   You should store the following information:
+        -   quantity
+        -   variants (could be colors, sizes, etc)
+        -   price per unit
+        -   name
+        -   image url
+        -   favourited or not (boolean)
+            All data should be stored in Firestore and fetched by the frontend, there should be NO static product data in the react application
 
-### `npm start`
+### Bonus
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Using Firestore and react create, a cart system. Create a cart page in your react app Add logic to prevent users from adding items to cart that are no longer in stock. You will have to check the current cart and the product quantity Cart page should have the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   List of products in cart
 
-### `npm test`
+    -   Ability to change quantity of products in cart
+    -   Ability to remove items from cart
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   TIPS :
+    -   Make sure your site is scoped to one category of products
 
-### `npm run build`
+### Useful links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   [React-router-dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
+-   [Dummy JSON](https://dummyjson.com/)
+-   [Fake Store](https://fakestoreapi.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Breakdown
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tasks:
 
-### `npm run eject`
+-   Use routes
+-   Minimum 2 pages (Other pages optional)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    1. Homepage
+        - Product carousel for featured products
+        - Introduction to the store page
+    2. Product page
+        - Routing so that the product page shows the product's info page when you click on an item
+        - Product grid
+    3. (Optional) Where to find us (Map and contact information displayed here)
+        - Map display
+        - Contact form
+        - Other social links
+    4. (Optional) Admin page to edit products
+        - For test purposes it can be unsecure (or coded/stored password)
+        - Admin login page
+        - Inventory page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Search bar
+-   Firestore database
+    -   Product data should store the following info:
+        -   Quantity (how many of the item the store has)
+        -   Variants (colours, sizes, etc.)
+        -   Price per unit
+        -   Name
+        -   Image url
+        -   Product description
+        -   Favorite or not (bool)
+    -   All data must be on firestore, no static data
+-   Shopping cart system
+    -   Don't allow the adding of out-of-stock products
+    -   Track total price of cart
+    -   Track total number of products in cart

@@ -1,0 +1,14 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__logo {
+        margin: 20px;
+    }
+    &__heading {
+        margin: 5px;
+    }
+    &__subHeading {
+        margin: 5px;
+    }
+}
