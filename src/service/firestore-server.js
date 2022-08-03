@@ -28,7 +28,11 @@ export const getProducts = async () => {
 export const getFeaturedProducts = async () => {};
 
 //Gets a single product by it's ID
-export const getProductByID = async (id) => {};
+export const getProductByID = async (id) => {
+    const data = (await productsColRef.doc(id).get()).data();
+
+    return data;
+};
 
 //Searches products by name
 export const searchProducts = async (search) => {};

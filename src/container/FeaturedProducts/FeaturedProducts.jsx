@@ -25,7 +25,10 @@ const FeaturedProducts = () => {
                 products.map((product) => {
                     console.log(product);
                     return (
-                        <Link key={product.id} to={product.id.toString()}>
+                        <Link
+                            key={product.id}
+                            to={`products/${product.id.toString()}`}
+                        >
                             <ProductCard productInfo={product} />
                         </Link>
                     );
