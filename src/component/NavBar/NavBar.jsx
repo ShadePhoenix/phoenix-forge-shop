@@ -12,6 +12,9 @@ const NavBar = () => {
                 <Link className={style.NavBar__link} to="/products">
                     Products
                 </Link>
+                <Link className={style.NavBar__link} to="/cart">
+                    <span className={style.MSO}>shopping_cart</span>
+                </Link>
             </section>
             <SearchBar />
         </nav>

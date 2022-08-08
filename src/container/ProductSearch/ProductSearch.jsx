@@ -1,13 +1,14 @@
-import style from "./ProductList.module.scss";
+import style from "./ProductSearch.module.scss";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { getAllProducts } from "../../service/firestore-server";
+import { Link, useParams } from "react-router-dom";
+import { searchProducts } from "../../service/firestore-server";
 import ProductCard from "../../component/ProductCard";
 
-const ProductList = (props) => {
+const ProductSearch = (props) => {
+    const { searchTerm } = useParams();
     const [products, setProducts] = useState([]);
     const getProducts = async () => {
-        const data = await getAllProducts();
+        const data = await searchProducts(searchTerm);
         setProducts(data);
     };
     useEffect(() => {
@@ -15,14 +16,19 @@ const ProductList = (props) => {
     }, []);
 
     return (
-        <article className={style.ProductList}>
-            <section className={style.ProductList__viewer}>
+        <article className={style.ProductSearch}>
+            <header>
+                <h3 className={style.ProductSearch__header}>
+                    Found {products.length} product{products.length > 1 && "s"}.
+                </h3>
+            </header>
+            <section className={style.ProductSearch__viewer}>
                 {products.length > 0 &&
                     products.map((product) => {
                         return (
                             <Link
                                 key={product.id}
-                                className={style.ProductList__link}
+                                className={style.ProductSearch__link}
                                 to={`/products/p/${product.id.toString()}`}
                             >
                                 <ProductCard productInfo={product} />
@@ -34,4 +40,4 @@ const ProductList = (props) => {
     );
 };
 
-export default ProductList;
+export default ProductSearch;

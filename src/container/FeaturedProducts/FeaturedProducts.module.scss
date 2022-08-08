@@ -1,0 +1,11 @@
+.FeaturedProducts {
+    &__header {
+        text-align: center;
+    }
+    &__viewer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @import "../../scss/links";
+}

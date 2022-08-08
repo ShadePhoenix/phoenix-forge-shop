@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./SearchBar.module.scss";
 
 const SearchBar = () => {
@@ -6,8 +7,19 @@ const SearchBar = () => {
     const handleInputChange = (event) => {
         setSearch(event.target.value);
     };
+    const navigate = useNavigate();
+    const handleSubmit = () => {
+        navigate(`/products/${search}`, { replace: true });
+        setSearch("");
+    };
+    const handleSubmitEnter = (event) => {
+        if (event.key === "Enter") {
+            navigate(`/products/${search}`, { replace: true });
+            setSearch("");
+        }
+    };
 
-    const handleSearchSumbit = () => {};
+    //useEffect(() => setSearch(""), []);
 
     return (
         <section className={style.SearchBar}>
@@ -18,11 +30,9 @@ const SearchBar = () => {
                 id="searchInput"
                 value={search}
                 onChange={handleInputChange}
+                onKeyDown={handleSubmitEnter}
             />
-            <button
-                className={style.SearchBar__btn}
-                onClick={handleSearchSumbit}
-            >
+            <button className={style.SearchBar__btn} onClick={handleSubmit}>
                 <span className={style.MSO}>Search</span>
             </button>
         </section>

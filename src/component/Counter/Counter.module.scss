@@ -1,0 +1,20 @@
+.Counter {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    //margin-bottom: 15px;
+    &__input {
+        text-align: center;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__btn,
+    &__input {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+}

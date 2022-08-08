@@ -1,0 +1,32 @@
+@import "../../scss/googleFonts";
+
+.MSO {
+    font-size: 20px;
+}
+
+.CartItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__image {
+        //max-width: 30px;
+        max-height: 75px;
+        border: 2px solid black;
+    }
+    &__details {
+        display: flex;
+        align-items: center;
+
+        &_delete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 83, 83);
+            height: 30px;
+            width: 30px;
+        }
+        & > * {
+            margin: 0px 10px;
+        }
+    }
+}

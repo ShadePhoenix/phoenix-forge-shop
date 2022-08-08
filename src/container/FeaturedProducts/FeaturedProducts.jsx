@@ -1,5 +1,5 @@
 import style from "./FeaturedProducts.module.scss";
-import { getProducts } from "../../service/firestore-server";
+import { getFeaturedProducts } from "../../service/firestore-server";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,31 +8,34 @@ import ProductCard from "../../component/ProductCard";
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([]);
     const getFeatured = async () => {
-        const data = await getProducts();
+        const data = await getFeaturedProducts();
         setProducts(data);
     };
     useEffect(() => {
-        if (products.length > 0) return;
         getFeatured();
     }, []);
 
     return (
-        <article>
-            <h2>Featured</h2>
+        <article className={style.FeaturedProducts}>
+            <header>
+                <h2 className={style.FeaturedProducts__header}>Featured</h2>
+            </header>
             {/* Corosel of featured products for PC/Larger screens. scrollable list for mobile */}
             {/* Get featured products then loop to display*/}
-            {products.length > 0 &&
-                products.map((product) => {
-                    console.log(product);
-                    return (
-                        <Link
-                            key={product.id}
-                            to={`products/${product.id.toString()}`}
-                        >
-                            <ProductCard productInfo={product} />
-                        </Link>
-                    );
-                })}
+            <section className={style.FeaturedProducts__viewer}>
+                {products.length > 0 &&
+                    products.map((product) => {
+                        return (
+                            <Link
+                                key={product.id}
+                                className={style.FeaturedProducts__link}
+                                to={`products/p/${product.id.toString()}`}
+                            >
+                                <ProductCard productInfo={product} />
+                            </Link>
+                        );
+                    })}
+            </section>
         </article>
     );
 };
