@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/phoenix-forge-shop/static/css/main.ed368af3.css",
+    "main.js": "/phoenix-forge-shop/static/js/main.2730ff9c.js",
+    "static/js/787.afabb23d.chunk.js": "/phoenix-forge-shop/static/js/787.afabb23d.chunk.js",
+    "static/media/logo.svg": "/phoenix-forge-shop/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/phoenix-forge-shop/index.html",
+    "main.ed368af3.css.map": "/phoenix-forge-shop/static/css/main.ed368af3.css.map",
+    "main.2730ff9c.js.map": "/phoenix-forge-shop/static/js/main.2730ff9c.js.map",
+    "787.afabb23d.chunk.js.map": "/phoenix-forge-shop/static/js/787.afabb23d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed368af3.css",
+    "static/js/main.2730ff9c.js"
+  ]
+}
